@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>
+*{box-sizing:border-box} body{margin:0;background:#0d1117;color:#eef3f8;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif}
+.wrap{min-height:100vh;padding:24px 18px;display:flex;align-items:center;justify-content:center}
+.card{width:100%;max-width:520px;background:#151b23;border:1px solid #26303c;border-radius:18px;padding:24px}
+.logo{font-size:28px;font-weight:800}.sub{color:#8d9aaa;margin-top:3px}
+.badge{display:inline-block;margin-top:18px;padding:7px 11px;border-radius:999px;background:#402020;color:#ff9b9b;font-weight:700}
+h2{font-size:22px;margin:22px 0 10px}.msg{color:#c5ced8;line-height:1.7}
+.server{margin-top:16px;padding:12px;border-radius:10px;background:#0d1117;color:#8cc8ff;word-break:break-all;font-family:monospace}
+.tip{margin-top:20px;color:#8d9aaa;font-size:14px;line-height:1.7}
+button{margin-top:18px;width:100%;border:0;border-radius:12px;background:#2867d6;color:white;padding:13px;font-weight:700;font-size:16px}
+</style>
+</head>
+<body><div class="wrap"><div class="card">
+<div class="logo">OptionRadar</div><div class="sub">Tailscale Mobile Monitor</div>
+<div class="badge">● OFFLINE</div>
+<h2 id="title">主機目前無法連線</h2>
+<div class="msg" id="msg"></div>
+<div class="server" id="server"></div>
+<div class="tip">長按畫面可以修改 OptionRadar 主機網址。<br>第一次測試也可以選「顯示預覽」先看手機版介面。</div>
+<button onclick="location.href='demo.html'">先看手機介面預覽</button>
+</div></div>
+<script>
+const q=new URLSearchParams(location.search);
+document.querySelector('#title').textContent=q.get('title')||'主機目前無法連線';
+document.querySelector('#msg').textContent=q.get('msg')||'請確認 Tailscale 與電腦端服務。';
+document.querySelector('#server').textContent=q.get('server')||'尚未設定主機';
+</script>
+</body></html>
