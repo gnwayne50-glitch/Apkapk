@@ -1,0 +1,25 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.optionradar.mobile'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.optionradar.mobile"
+        minSdk 26
+        targetSdk 35
+        versionCode 4
+        versionName "0.4-native-kline"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+}
